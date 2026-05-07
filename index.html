@@ -85,19 +85,6 @@
     <!-- Barra de progreso de lectura -->
     <div id="progress-bar"></div>
 
-    <!-- Música Ambiental Oculta -->
-    <audio id="ambient-audio" loop>
-        <source src="./altar.mp3" type="audio/mpeg">
-    </audio>
-
-    <!-- Botón Flotante de Audio -->
-    <button id="audio-toggle" class="fixed bottom-6 right-6 bg-terracota text-white p-4 rounded-full shadow-2xl z-50 hover:bg-tierra hover:scale-110 transition-all duration-300 flex items-center group">
-        <i data-lucide="music" class="w-6 h-6"></i>
-        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out pl-0 group-hover:pl-3 font-semibold text-sm">
-            ALTAR Y SACRISTAN 
-        </span>
-    </button>
-
     <!-- Barra de Navegación -->
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-40 border-b border-terracota/20 transition-all duration-300" id="navbar">
         <div class="max-w-6xl mx-auto px-4">
@@ -127,9 +114,17 @@
 
     <!-- Sección de Portada (Hero) -->
     <section id="portada" class="min-h-screen flex items-center justify-center pt-20 pb-12 px-4 border-b border-terracota/20 relative">
-        <div class="max-w-4xl mx-auto text-center bg-white/90 p-8 md:p-16 rounded-3xl shadow-2xl backdrop-blur-md border border-white reveal">
+        <div class="max-w-4xl mx-auto text-center bg-white/90 p-8 md:p-16 rounded-3xl shadow-2xl backdrop-blur-md border border-white reveal relative">
             
-            <div class="animate-float inline-block">
+            <!-- Logos Superiores -->
+            <div class="absolute top-6 left-6 md:top-10 md:left-10">
+                <img src="./uan.png" alt="UAN" class="h-16 md:h-24 w-auto object-contain">
+            </div>
+            <div class="absolute top-6 right-6 md:top-10 md:right-10">
+                <img src="./unidad.png" alt="Turismo y Gastronomía" class="h-16 md:h-24 w-auto object-contain">
+            </div>
+
+            <div class="animate-float inline-block mt-20 md:mt-12">
                 <i data-lucide="book-open" class="mx-auto h-16 w-16 text-terracota mb-6 drop-shadow-md"></i>
             </div>
             
@@ -388,7 +383,7 @@
             <div class="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-2xl reveal">
                 <h3 class="text-2xl font-serif font-bold text-arena mb-4">El Objetivo Central</h3>
                 <p class="text-xl font-serif italic leading-relaxed text-crema/90">
-                    "Demostrar que la gastronomía religiosa no solo preserva el patrimonio inmaterial, sino que genera una economía circular donde el turista no solo visita un templo, sino que <strong class="text-white border-b-2 border-terracota">se lleva el territorio en el paladar</strong>."
+                    "Demostrar que la gastronomía religiosa no solo preserva el patrimonio inmaterial, sino que genera una economía circular donde el turista no solo visita un templo, sino que <strong class="text-white">se lleva el territorio en el paladar</strong>."
                 </p>
             </div>
         </div>
@@ -791,7 +786,6 @@
 
     <!-- Conclusiones Generales -->
     <section id="conclusiones" class="py-24 px-4 bg-terracota text-white border-t border-arena relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent animate-pulse"></div>
         
         <div class="max-w-4xl mx-auto relative z-10">
             <div class="text-center mb-16 reveal">
@@ -822,17 +816,6 @@
                 <span class="text-terracota font-bold tracking-widest uppercase text-sm">Próximamente</span>
                 <h2 class="text-4xl md:text-5xl font-serif font-bold text-tierra mt-2 mb-4">Anexo: Recetario y Evidencias</h2>
                 <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
-            </div>
-
-            <!-- Aviso de Estado Temporal -->
-            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-12 rounded-r-2xl shadow-sm flex items-start reveal">
-                <i data-lucide="clock" class="text-yellow-600 mt-1 mr-4 h-6 w-6 flex-shrink-0"></i>
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-800">Aviso: Sección en fase de levantamiento (Temporal)</h3>
-                    <p class="text-yellow-700 mt-2">
-                        Este apartado de la monografía digital se encuentra estructurado y a la espera de la ejecución práctica del proyecto. Aquí se integrarán las <strong>recetas originales estandarizadas</strong> obtenidas en campo, así como la <strong>evidencia fotográfica</strong> de los postres elaborados físicamente por este equipo de investigación.
-                    </p>
-                </div>
             </div>
 
             <!-- Grid de Recetas Vacías para llenar en campo -->
@@ -954,27 +937,6 @@
             reveals.forEach(reveal => {
                 observer.observe(reveal);
             });
-        });
-
-        // 3. Control de Audio Ambiental
-        const audioBtn = document.getElementById('audio-toggle');
-        const audio = document.getElementById('ambient-audio');
-        let isPlaying = false;
-
-        audioBtn.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                audioBtn.classList.remove('bg-tierra');
-                audioBtn.classList.add('bg-terracota');
-                audioBtn.innerHTML = '<i data-lucide="music" class="w-6 h-6"></i><span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out pl-0 group-hover:pl-3 font-semibold text-sm">Ambiente Sonoro</span>';
-            } else {
-                audio.play();
-                audioBtn.classList.remove('bg-terracota');
-                audioBtn.classList.add('bg-tierra');
-                audioBtn.innerHTML = '<i data-lucide="volume-2" class="w-6 h-6"></i><span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out pl-0 group-hover:pl-3 font-semibold text-sm">Pausar</span>';
-            }
-            isPlaying = !isPlaying;
-            lucide.createIcons(); // Re-renderizar iconos tras cambiar el HTML
         });
     </script>
 </body>
