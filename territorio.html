@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monografía: Sabores de la Fe en Nayarit</title>
+    <!-- Tailwind CSS para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Iconos de Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Lora', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        terracota: '#9c2a10',
+                        crema: '#fcf8f2',
+                        tierra: '#5c3a21',
+                        arena: '#e6d5c3'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcf8f2;
+            scroll-behavior: smooth;
+        }
+        .hero-pattern {
+            background-color: #fcf8f2;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239c2a10' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .placeholder-box {
+            background-image: repeating-linear-gradient(45deg, #fcf8f2 25%, transparent 25%, transparent 75%, #fcf8f2 75%, #fcf8f2), repeating-linear-gradient(45deg, #fcf8f2 25%, #ffffff 25%, #ffffff 75%, #fcf8f2 75%, #fcf8f2);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="text-tierra font-sans antialiased">
+
+    <!-- Barra de Navegación -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 border-b border-terracota/20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <span class="font-serif font-bold text-terracota text-xl tracking-wide">Gastronomía y Territorio</span>
+                <div class="hidden md:flex space-x-6 text-sm font-semibold text-tierra/80 items-center">
+                    <a href="#portada" class="hover:text-terracota transition">Inicio</a>
+                    <a href="#introduccion" class="hover:text-terracota transition">Introducción</a>
+                    <a href="#presentacion" class="hover:text-terracota transition">Resumen Visual</a>
+                    
+                    <!-- Menú Desplegable -->
+                    <div class="relative group">
+                        <button class="flex items-center hover:text-terracota transition focus:outline-none">
+                            Municipios <i data-lucide="chevron-down" class="ml-1 w-4 h-4"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white border border-terracota/20 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-300 z-50 overflow-hidden">
+                            <a href="#capitulo-jala" class="block px-4 py-3 hover:bg-crema hover:text-terracota border-b border-terracota/10">1. Jala</a>
+                            <a href="#capitulo-ahuacatlan" class="block px-4 py-3 hover:bg-crema hover:text-terracota border-b border-terracota/10">2. Ahuacatlán</a>
+                            <a href="#capitulo-ixtlan" class="block px-4 py-3 hover:bg-crema hover:text-terracota border-b border-terracota/10">3. Ixtlán</a>
+                            <a href="#capitulo-amatlan" class="block px-4 py-3 hover:bg-crema hover:text-terracota">4. Amatlán</a>
+                        </div>
+                    </div>
+                    
+                    <a href="#conclusiones" class="hover:text-terracota transition">Conclusiones</a>
+                    <a href="#recetas" class="hover:text-terracota transition font-bold">Anexo: Recetas</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Portada (Hero) -->
+    <section id="portada" class="hero-pattern min-h-screen flex items-center justify-center pt-20 pb-12 px-4 border-b border-terracota/20">
+        <div class="max-w-4xl mx-auto text-center bg-white/80 p-8 md:p-16 rounded-3xl shadow-xl backdrop-blur-sm border border-white">
+            
+            <i data-lucide="book-open" class="mx-auto h-12 w-12 text-terracota mb-6"></i>
+            
+            <h1 class="text-2xl md:text-3xl font-serif font-bold tracking-widest text-tierra uppercase">
+                Universidad Autónoma de Nayarit
+            </h1>
+            <h2 class="text-lg md:text-xl font-serif text-terracota mt-2 uppercase tracking-wider">
+                Unidad Académica de Turismo y Gastronomía
+            </h2>
+            
+            <div class="my-12">
+                <h3 class="text-4xl md:text-6xl font-serif font-bold text-tierra leading-tight mb-4">
+                    Sabores de la Fe en el Sur de Nayarit
+                </h3>
+                <p class="text-xl md:text-2xl italic text-tierra/70">
+                    La repostería religiosa tradicional como atractivo turístico
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 text-left mt-12 bg-crema p-8 rounded-2xl border border-terracota/10">
+                <div>
+                    <h4 class="font-bold text-terracota uppercase text-sm tracking-wider mb-2 border-b border-terracota/20 pb-2">Información Académica</h4>
+                    <p class="mb-1"><span class="font-semibold">Materia:</span> Gastronomía y Territorio</p>
+                    <p><span class="font-semibold">Docente:</span> Dr. Jeraar Atahualpa Ramos García</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-terracota uppercase text-sm tracking-wider mb-2 border-b border-terracota/20 pb-2">Equipo de Investigación</h4>
+                    <ul class="space-y-1">
+                        <li>Santiago González, Luis Armando</li>
+                        <li>De La Rosa Torres, Diego</li>
+                        <li>Villagrana Ibarra, David</li>
+                        <li>González Hernández, Zully Adolfo</li>
+                        <li>Arroyo Soria, Leonel Aldair</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="mt-12 text-sm text-tierra/60 font-semibold tracking-widest uppercase">
+                Tepic, Nayarit &bull; Mayo de 2026
+            </p>
+        </div>
+    </section>
+
+    <!-- Sección de Introducción -->
+    <section id="introduccion" class="py-24 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Contexto del Proyecto</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-tierra mt-2">Introducción</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-6 text-lg md:text-xl leading-relaxed text-gray-700 text-justify">
+                <p class="first-letter:text-7xl first-letter:font-serif first-letter:text-terracota first-letter:mr-3 first-letter:float-left">
+                    La gastronomía es mucho más que el acto de alimentarse; es un reflejo vivo de la identidad, la cultura y la historia de un territorio. En el estado de Nayarit, específicamente en la Zona Sur que comprende los municipios de Jala, Ahuacatlán, Ixtlán del Río y Amatlán de Cañas, la comida adquiere una dimensión aún más profunda cuando se entrelaza con la fe. La "gastronomía religiosa" de esta región se manifiesta como un pilar fundamental de las festividades patronales, donde ingredientes locales y técnicas ancestrales se transforman en ofrendas de devoción y convivencia.
+                </p>
+                <p>
+                    El presente trabajo monográfico tiene como objetivo principal analizar y visibilizar la repostería tradicional vinculada a las festividades católicas de la Zona Sur de Nayarit, explorando su potencial no solo como patrimonio inmaterial, sino como un <span class="font-semibold text-terracota">producto turístico gastronómico</span> capaz de atraer visitantes al estado.
+                </p>
+                
+                <div class="bg-crema p-8 rounded-2xl border border-terracota/20 my-10 shadow-sm">
+                    <h3 class="text-2xl font-serif font-bold text-tierra mb-6 text-center">Ruta del Dulzor: Municipios de Estudio</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="text-terracota mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-base"><strong class="text-tierra">Jala:</strong> Los rosquetes y encanelados durante la conmemoración de la Judea en Semana Santa.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="text-terracota mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-base"><strong class="text-tierra">Ahuacatlán:</strong> La cajeta de mango entrelazada con las festividades de San Francisco de Asís.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="text-terracota mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-base"><strong class="text-tierra">Ixtlán del Río:</strong> Las nieves de garrafa, punto de encuentro tras las celebraciones eucarísticas.</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-lucide="map-pin" class="text-terracota mt-1 mr-3 flex-shrink-0"></i>
+                            <p class="text-base"><strong class="text-tierra">Amatlán de Cañas:</strong> Las palanquetas vinculadas a la festividad del Cristo del Nazareno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Presentación Visual (Rescatada) -->
+    <section id="presentacion" class="py-24 px-4 bg-tierra text-crema border-y border-arena relative overflow-hidden">
+        <!-- Decoración de fondo -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-terracota/20 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-arena/10 blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-arena font-bold tracking-widest uppercase text-sm">Visión General de la Investigación</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2">Matriz del Proyecto</h2>
+                <p class="text-lg text-crema/80 mt-4 max-w-2xl mx-auto">La repostería religiosa como imán de desarrollo turístico regional en la Zona Sur de Nayarit.</p>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Tarjetas Visuales -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Tarjeta Jala -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:transform hover:-translate-y-2 transition duration-300 shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-terracota rounded-full flex items-center justify-center mb-4 shadow-lg border border-white/20">
+                        <i data-lucide="croissant" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Jala</h3>
+                    <p class="text-arena font-semibold mb-3">Rosquetes y Encanelados</p>
+                    <div class="text-sm text-crema/70 border-t border-white/20 pt-3">
+                        <p class="flex items-center justify-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Semana Santa</p>
+                        <p class="mt-1 flex items-center justify-center"><i data-lucide="theater" class="w-3 h-3 mr-1"></i> La Judea</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Ahuacatlán -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:transform hover:-translate-y-2 transition duration-300 shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-terracota rounded-full flex items-center justify-center mb-4 shadow-lg border border-white/20">
+                        <i data-lucide="package-open" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Ahuacatlán</h3>
+                    <p class="text-arena font-semibold mb-3">Cajeta de Mango</p>
+                    <div class="text-sm text-crema/70 border-t border-white/20 pt-3">
+                        <p class="flex items-center justify-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Octubre</p>
+                        <p class="mt-1 flex items-center justify-center"><i data-lucide="church" class="w-3 h-3 mr-1"></i> San Francisco</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Ixtlán -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:transform hover:-translate-y-2 transition duration-300 shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-terracota rounded-full flex items-center justify-center mb-4 shadow-lg border border-white/20">
+                        <i data-lucide="ice-cream" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Ixtlán del Río</h3>
+                    <p class="text-arena font-semibold mb-3">Nieves de Garrafa</p>
+                    <div class="text-sm text-crema/70 border-t border-white/20 pt-3">
+                        <p class="flex items-center justify-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> Dominical</p>
+                        <p class="mt-1 flex items-center justify-center"><i data-lucide="bell" class="w-3 h-3 mr-1"></i> Cristo Rey / Plaza</p>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Amatlán -->
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 text-center hover:transform hover:-translate-y-2 transition duration-300 shadow-xl">
+                    <div class="w-16 h-16 mx-auto bg-terracota rounded-full flex items-center justify-center mb-4 shadow-lg border border-white/20">
+                        <i data-lucide="cookie" class="text-white w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold text-white mb-2">Amatlán</h3>
+                    <p class="text-arena font-semibold mb-3">Palanqueta</p>
+                    <div class="text-sm text-crema/70 border-t border-white/20 pt-3">
+                        <p class="flex items-center justify-center"><i data-lucide="calendar" class="w-3 h-3 mr-1"></i> 15 de Enero</p>
+                        <p class="mt-1 flex items-center justify-center"><i data-lucide="church" class="w-3 h-3 mr-1"></i> Jesús Nazareno</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 text-center max-w-4xl mx-auto shadow-2xl">
+                <h3 class="text-2xl font-serif font-bold text-arena mb-4">El Objetivo Central</h3>
+                <p class="text-xl font-serif italic leading-relaxed text-crema/90">
+                    "Demostrar que la gastronomía religiosa no solo preserva el patrimonio inmaterial, sino que genera una economía circular donde el turista no solo visita un templo, sino que <strong class="text-white border-b-2 border-terracota">se lleva el territorio en el paladar</strong>."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capítulo 1: Jala -->
+    <section id="capitulo-jala" class="py-24 px-4 bg-crema border-t border-arena">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Encabezado del Capítulo -->
+            <div class="text-center mb-16">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Capítulo I</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-tierra mt-2 mb-4">Jala</h2>
+                <h3 class="text-2xl font-serif italic text-tierra/80">Fe, Teatro y el Sabor de la Judea</h3>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-800 text-justify">
+                
+                <!-- 1.1 Antecedentes del Territorio -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="landmark" class="mr-2"></i> 1.1 El Escenario: Jala y su herencia
+                    </h4>
+                    <p class="mb-4">
+                        El nombre del Pueblo Mágico de Jala deriva del vocablo náhuatl <em>"Xali"</em> (arena) y <em>"Tla"</em> (lugar donde abunda). Resguardado por la Sierra Madre Occidental y a las faldas del volcán Ceboruco, este municipio es un bastión de arquitectura colonial y calles empedradas. Su evangelización, llevada a cabo por frailes franciscanos provenientes de Ahuacatlán, dejó una huella indeleble en sus tradiciones y en la monumental Basílica Lateranense de Nuestra Señora de la Asunción, joya arquitectónica del siglo XVIII.
+                    </p>
+                </div>
+
+                <!-- 1.2 La Judea -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="theater" class="mr-2"></i> 1.2 La Judea: 445 años de fe viva
+                    </h4>
+                    <p class="mb-4">
+                        Más allá de su fama mundial por cultivar los elotes más grandes del mundo, el evento artístico, cultural y religioso más importante de Jala ocurre en Semana Santa: <strong>La Judea</strong>. Con más de 445 años de historia ininterrumpida (datando de finales del siglo XVI), es considerada por historiadores y autoridades de turismo como la segunda representación de la Pasión de Cristo más antigua de todo México.
+                    </p>
+                    <p class="mb-4">
+                        La Judea transforma al pueblo entero en un teatro inmersivo al aire libre. Desde el Domingo de Ramos hasta el Viernes Santo, las calles son el escenario de procesiones, persecuciones simbólicas (donde participan los "judíos" con vestimentas rojas y lanzas), y la Marcha del Silencio. Esta celebración atrae a miles de turistas, generando un ecosistema económico donde la gastronomía local entra en escena para alimentar y deleitar a locales y peregrinos.
+                    </p>
+                </div>
+
+                <!-- 1.3 Gastronomía: Rosquetes y Encanelados -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-arena my-8">
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="croissant" class="mr-2"></i> 1.3 El dulce de Cuaresma: Rosquetes y Encanelados
+                    </h4>
+                    <p class="mb-4">
+                        Durante la Cuaresma y los días santos de la Judea, el territorio huele a piloncillo, canela y horno. Ante la restricción de ciertos alimentos y la necesidad de energía para las largas jornadas de procesión, la repostería tradicional jaleña toma protagonismo, destacando dos joyas de la panadería local: <strong>los encanelados y los rosquetes</strong>.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Los Rosquetes de Jala</strong> son particularmente fascinantes desde el punto de vista del patrimonio gastronómico. Históricamente conocidos en la región como <em>"pan de boda"</em> (ofrecidos a los novios durante el desayuno nupcial), se han adaptado fuertemente a la temporada de Semana Santa. Tienen una textura firme, similar a una galleta crujiente, y su receta ancestral guarda secretos fascinantes: la masa tradicionalmente incorpora vino blanco, un toque de tequila y un glaseado de azúcar característico. Además, en las recetas más antiguas de la región, se utiliza <strong>tequesquite</strong> (un mineral usado desde la época prehispánica que funciona como leudante natural), aportando un sabor que fusiona el pasado indígena con la repostería conventual europea.
+                    </p>
+                    <p>
+                        Por su parte, <strong>los encanelados</strong> acompañan a los rosquetes en los canastos de las panaderas locales, ofreciendo masas suaves espolvoreadas abundantemente con canela y azúcar, ideales para acompañarse con atoles locales durante las noches de vigilia y callejoneadas. Ambos postres no son solo comida; son "souvenirs" comestibles y elementos de identidad cultural que el turismo busca activamente al visitar Jala.
+                    </p>
+                </div>
+
+                <!-- PLACEHOLDERS PARA TRABAJO DE CAMPO -->
+                <div class="mt-12 space-y-6">
+                    <h4 class="text-xl font-serif font-bold text-tierra border-b-2 border-terracota pb-2">
+                        Evidencia y Levantamiento de Campo
+                    </h4>
+                    
+                    <!-- Caja de Entrevistas -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="mic" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA ENTREVISTAS]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Aquí se redactará la información recopilada en campo. Se incluirán los nombres de las familias productoras, cuántas generaciones llevan haciendo rosquetes, cómo ha cambiado la técnica y las historias locales recolectadas durante las visitas a Jala.
+                        </p>
+                    </div>
+
+                    <!-- Caja de Fotografías -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="camera" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA GALERÍA FOTOGRÁFICA]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Aquí se insertarán las fotografías tomadas por el equipo de investigación: imágenes de las calles empedradas de Jala, la Basílica, los hornos, la venta en las calles y la festividad.
+                        </p>
+                    </div>
+
+                    <!-- Nota sobre la receta -->
+                    <div class="bg-terracota/10 rounded-lg p-4 flex items-start border-l-4 border-terracota">
+                        <i data-lucide="info" class="text-terracota mt-1 mr-3 flex-shrink-0"></i>
+                        <p class="text-sm text-tierra font-semibold italic">
+                            Nota metodológica: Las recetas estandarizadas (ingredientes, gramajes, procedimiento) y las fotografías de los rosquetes y encanelados elaborados por este equipo de investigación, se encuentran detalladas en el "Anexo Técnico: Recetario y Presentación Final" al término de este documento.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Referencias APA (Capítulo 1) -->
+                <div class="mt-12 pt-8 border-t border-arena text-sm text-tierra/90">
+                    <h5 class="font-bold mb-4 uppercase tracking-wider text-xs text-terracota flex items-center">
+                        <i data-lucide="book-marked" class="w-4 h-4 mr-2"></i> Referencias Bibliográficas (Capítulo I)
+                    </h5>
+                    <div class="space-y-3" style="text-indent: -1.5em; padding-left: 1.5em;">
+                        <p>Estado del Tiempo. (2021). <em>Pan de boda: los famosos rosquetes de Jala</em>. Acervo Gastronómico.</p>
+                        <p>México Desconocido. (s.f.). <em>Fin de semana en Jala, el Pueblo Mágico de Nayarit</em>.</p>
+                        <p>Secretaría de Turismo [Sectur]. (2025). <em>Jala, Nayarit, alista La Judea, la representación cultural más importante</em>. Inversión Turística.</p>
+                        <p>Somos MXC. (2020). <em>El pueblo de Jala tiene magia, cascadas, volcanes y una gran historia</em>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Capítulo 2: Ahuacatlán -->
+    <section id="capitulo-ahuacatlan" class="py-24 px-4 bg-white border-t border-arena">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Encabezado del Capítulo -->
+            <div class="text-center mb-16">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Capítulo II</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-tierra mt-2 mb-4">Ahuacatlán</h2>
+                <h3 class="text-2xl font-serif italic text-tierra/80">El Camino Real, San Francisco de Asís y el Dulzor del Mango</h3>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-800 text-justify">
+                
+                <!-- 2.1 Antecedentes -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="map" class="mr-2"></i> 2.1 El Escenario: Cruce de caminos y señoríos
+                    </h4>
+                    <p class="mb-4">
+                        Ahuacatlán, cuyo nombre deriva del náhuatl y significa <em>"Lugar donde abunda el aguacate"</em>, es un municipio con una profunda carga histórica. Fundado originalmente por la tribu Nahoa en su peregrinar hacia el centro del Anáhuac, se convirtió en 1529 en puerta de entrada y paraje para el conquistador Nuño Beltrán de Guzmán. 
+                    </p>
+                    <p class="mb-4">
+                        Durante la época colonial, su relevancia se consolidó al ser un paso vital del histórico <strong>Camino Real</strong> que conectaba Guadalajara con el puerto de San Blas. Este constante flujo de arrieros, comerciantes y frailes permitió un intercambio cultural y gastronómico único, dejando como legado el majestuoso Templo de San Francisco de Asís (originalmente dedicado a San Juan Evangelista), edificado en el siglo XVII.
+                    </p>
+                </div>
+
+                <!-- 2.2 La Festividad -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="church" class="mr-2"></i> 2.2 La Devoción: Las Fiestas de Octubre
+                    </h4>
+                    <p class="mb-4">
+                        El eje religioso y social de Ahuacatlán gira en torno a su Santo Patrono, <strong>San Francisco de Asís</strong>. Cuenta la leyenda local que la imagen del santo llegó al pueblo a lomos de una mula que, exhausta, se echó a descansar y no quiso avanzar más, decidiendo así el lugar donde se quedaría (fenómeno que incluso motivó la construcción de un monumento histórico a "la burra santa").
+                    </p>
+                    <p class="mb-4">
+                        Del 25 de septiembre al 4 de octubre de cada año, el pueblo celebra sus emblemáticas "Fiestas de Octubre". Estas festividades representan el momento cumbre para la comunidad local y un motivo de retorno obligado para los "Hijos Ausentes" (migrantes que vuelven al pueblo). La explanada frente al templo y el Jardín de los Hijos Ausentes se convierten en el epicentro del turismo religioso, albergando peregrinaciones, danzas, carros alegóricos, el folclor de las corridas de toros y, por supuesto, un enorme tianguis gastronómico.
+                    </p>
+                </div>
+
+                <!-- 2.3 La Cajeta de Mango -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm border border-arena my-8">
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="package-open" class="mr-2"></i> 2.3 El Orgullo Local: La Cajeta de Mango
+                    </h4>
+                    <p class="mb-4">
+                        Aunque el mango es una fruta que alcanza su punto máximo de maduración y cosecha durante el verano, el ingenio de la cocina y conservación nayarita logró encapsular su sabor para que coincidiera de forma espléndida con las Fiestas de Octubre mediante la <strong>Cajeta de Mango</strong>. Es fundamental destacar que, a diferencia de la cajeta de leche de cabra famosa en el centro de México (Celaya), en Nayarit el término "cajeta" se refiere a un <em>ate</em> o pasta densa de fruta de consistencia firme que se puede rebanar.
+                    </p>
+                    <p class="mb-4">
+                        La elaboración artesanal de la cajeta de mango es una verdadera prueba de resistencia y tradición. Se requiere extraer la pulpa de grandes cantidades de fruta, la cual se mezcla con azúcar y se cocina a fuego vivo en enormes <strong>cazos de cobre</strong>. Durante horas, las familias remueven constantemente la mezcla con largas palas de madera hasta que el agua se evapora y se logra la densidad perfecta. Posteriormente, se vierte caliente en moldes o en pequeñas cajitas de madera (que le dan su nombre tradicional).
+                    </p>
+                    <p>
+                        Durante la festividad de San Francisco de Asís, este dulce funge como ofrenda, como botana en el Jardín de los Hijos Ausentes, y como el "souvenir" obligado que demuestra cómo un producto del agro local se ha consolidado en un exitoso producto turístico.
+                    </p>
+                </div>
+
+                <!-- PLACEHOLDERS PARA TRABAJO DE CAMPO -->
+                <div class="mt-12 space-y-6">
+                    <h4 class="text-xl font-serif font-bold text-tierra border-b-2 border-terracota pb-2">
+                        Evidencia y Levantamiento de Campo
+                    </h4>
+                    
+                    <!-- Caja de Entrevistas -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="mic" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA ENTREVISTAS]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Aquí se documentarán las charlas con los productores locales de cajeta de mango. Deberá indagarse qué variedad específica de mango prefieren, cuánto tiempo de cocción en cazo de cobre le dan y qué volumen logran vender durante la temporada de las Fiestas de Octubre.
+                        </p>
+                    </div>
+
+                    <!-- Caja de Fotografías -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="camera" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA GALERÍA FOTOGRÁFICA]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Imágenes planeadas: El templo de San Francisco de Asís, el Jardín de los Hijos Ausentes, los bloques o cajitas de Cajeta de Mango en los puestos de venta y, de ser posible, el proceso de batido en el cazo de cobre.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Referencias APA (Capítulo 2) -->
+                <div class="mt-12 pt-8 border-t border-arena text-sm text-tierra/90">
+                    <h5 class="font-bold mb-4 uppercase tracking-wider text-xs text-terracota flex items-center">
+                        <i data-lucide="book-marked" class="w-4 h-4 mr-2"></i> Referencias Bibliográficas (Capítulo II)
+                    </h5>
+                    <div class="space-y-3" style="text-indent: -1.5em; padding-left: 1.5em;">
+                        <p>Gobierno de Ahuacatlán. (s.f.). <em>Historia y Cultura: Fundación y paso del Camino Real</em>. H. XLIII Ayuntamiento.</p>
+                        <p>Instituto Nacional para el Federalismo y el Desarrollo Municipal [INAFED]. (s.f.). <em>Perfil sociodemográfico y monumentos históricos de Ahuacatlán, Nayarit</em>. Secretaría de Gobernación.</p>
+                        <p>México Desconocido. (s.f.). <em>Ahuacatlán, el Pueblo Mágico junto a un volcán. Dulces y bebidas: Cajeta de mango</em>.</p>
+                        <p>Visita Nayarit. (s.f.). <em>Ahuacatlán, Pueblo Mágico del corredor sur: Qué comer frente al Templo de San Francisco de Asís</em>. Portal Turístico Estatal.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Capítulo 3: Ixtlán del Río -->
+    <section id="capitulo-ixtlan" class="py-24 px-4 bg-crema border-t border-arena">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Encabezado del Capítulo -->
+            <div class="text-center mb-16">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Capítulo III</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-tierra mt-2 mb-4">Ixtlán del Río</h2>
+                <h3 class="text-2xl font-serif italic text-tierra/80">El Ritual del Atrio y la Frescura de la Garrafa</h3>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-800 text-justify">
+                
+                <!-- 3.1 Antecedentes -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="store" class="mr-2"></i> 3.1 El Escenario: La Puerta de Nayarit
+                    </h4>
+                    <p class="mb-4">
+                        Conocido históricamente como la "Puerta de Nayarit" por su colindancia con el estado de Jalisco, Ixtlán del Río (cuyo nombre náhuatl significa <em>"Lugar donde abunda la obsidiana"</em>) es el municipio con mayor dinamismo comercial de la Zona Sur. Más allá de su inmensa riqueza arqueológica (como la zona de Los Toriles), Ixtlán se distingue por su arquitectura de portales, sus calles de intenso movimiento y una vocación de hospitalidad muy arraigada.
+                    </p>
+                </div>
+
+                <!-- 3.2 La Festividad / La Salida de Misa -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="bell" class="mr-2"></i> 3.2 La Devoción: Santiago Apóstol y el Cristo Rey
+                    </h4>
+                    <p class="mb-4">
+                        La vida religiosa de Ixtlán del Río tiene dos grandes pilares. En el corazón del centro histórico se yergue la <strong>Parroquia de Santiago Apóstol</strong> (cuya fiesta se celebra el 25 de julio), una hermosa edificación de estilo barroco y neoclásico que vigila el devenir de la plaza principal. Por otro lado, en las alturas, se encuentra el <strong>Cerrito del Cristo Rey</strong>, un mirador y santuario inaugurado en 1949 que representa la devoción más profunda de los ixtlenses.
+                    </p>
+                    <p class="mb-4">
+                        A diferencia de las celebraciones estrictamente anuales, en Ixtlán existe un fenómeno recurrente de cohesión social: el ritual dominical y la "salida de misa". Al finalizar las celebraciones en Santiago Apóstol, o tras cumplir la tradición de subir las escalinatas del Cristo Rey (especialmente durante sus festividades en octubre), las familias no regresan inmediatamente a casa. Permanecen en los portales y la plaza para convivir. Es en este espacio de transición entre lo divino y lo terrenal donde se instala el comercio gastronómico.
+                    </p>
+                </div>
+
+                <!-- 3.3 Las Nieves de Garrafa -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-arena my-8">
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="ice-cream" class="mr-2"></i> 3.3 El Punto de Encuentro: Las Nieves de Garrafa
+                    </h4>
+                    <p class="mb-4">
+                        El clima de la región y la necesidad de un refrigerio tras las caminatas al Cristo Rey o las misas dominicales abrieron la puerta a una de las tradiciones más icónicas del municipio: las <strong>Nieves de Garrafa</strong>. Aunque el helado es un producto universal, la técnica de la "garrafa" aporta un valor artesanal y performático que atrae profundamente al turista.
+                    </p>
+                    <p class="mb-4">
+                        Este método consiste en un cilindro de acero inoxidable (la garrafa) introducido en una tina de madera. El espacio entre ambos recipientes se rellena con hielo en trozos y sal de grano. El artesano o "nevero" vierte la mezcla de frutas de temporada y comienza un laborioso proceso de girar manualmente el cilindro durante horas.
+                    </p>
+                    <p>
+                        Consumir una nieve de garrafa en los portales de Ixtlán, o comer las tradicionales "cañas" dulces tras bajar del Cristo Rey, se ha convertido en una experiencia turística nostálgica. El "ir por una nieve a la plaza de Ixtlán" es un motivo de viaje corto para los habitantes de los municipios vecinos, demostrando cómo un postre funge como ancla de turismo recreativo.
+                    </p>
+                </div>
+
+                <!-- PLACEHOLDERS PARA TRABAJO DE CAMPO -->
+                <div class="mt-12 space-y-6">
+                    <h4 class="text-xl font-serif font-bold text-tierra border-b-2 border-terracota pb-2">
+                        Evidencia y Levantamiento de Campo
+                    </h4>
+                    
+                    <!-- Caja de Entrevistas -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="mic" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA ENTREVISTAS]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Aquí se redactarán las conversaciones con los maestros "neveros" ubicados cerca de la Parroquia de Santiago Apóstol. ¿Cuántos años llevan instalándose en los portales? ¿Cuánto tiempo les toma cuajar la nieve a mano? ¿Cuáles son los sabores más vendidos?
+                        </p>
+                    </div>
+
+                    <!-- Caja de Fotografías -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="camera" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA GALERÍA FOTOGRÁFICA]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Registro visual necesario: La Parroquia de Santiago Apóstol de fondo, el "nevero" girando la tina de madera, panorámicas desde el Cerrito del Cristo Rey y los comensales disfrutando del producto en la plaza.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Referencias APA (Capítulo 3) -->
+                <div class="mt-12 pt-8 border-t border-arena text-sm text-tierra/90">
+                    <h5 class="font-bold mb-4 uppercase tracking-wider text-xs text-terracota flex items-center">
+                        <i data-lucide="book-marked" class="w-4 h-4 mr-2"></i> Referencias Bibliográficas (Capítulo III)
+                    </h5>
+                    <div class="space-y-3" style="text-indent: -1.5em; padding-left: 1.5em;">
+                        <p>Diócesis de Tepic. (s.f.). <em>Registro y festividades de la Parroquia de Santiago Apóstol y Cristo Rey</em>. Archivo Decanato Ixtlán del Río.</p>
+                        <p>México Desconocido. (s.f.). <em>Cerrito del Cristo Rey en Ixtlán del Río, historia y atractivos</em>.</p>
+                        <p>Sistema de Información Cultural [SIC México]. (s.f.). <em>Parroquia de Santiago Apóstol: Monumentos e inmuebles coloniales de Ixtlán del Río</em>. Gobierno de México.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Capítulo 4: Amatlán de Cañas -->
+    <section id="capitulo-amatlan" class="py-24 px-4 bg-white border-t border-arena">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Encabezado del Capítulo -->
+            <div class="text-center mb-16">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Capítulo IV</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-tierra mt-2 mb-4">Amatlán de Cañas</h2>
+                <h3 class="text-2xl font-serif italic text-tierra/80">Indulgencias, el Cristo Nazareno y la Energía del Cacahuate</h3>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-800 text-justify">
+                
+                <!-- 4.1 Antecedentes -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="leaf" class="mr-2"></i> 4.1 El Escenario: Agua, amates y cañaverales
+                    </h4>
+                    <p class="mb-4">
+                        Situado en los límites con el estado de Jalisco, el municipio de Amatlán de Cañas posee una geografía privilegiada. Su nombre es un vocablo mixto: del náhuatl <em>"Amatlán"</em> (Lugar donde abundan los amates o papel) y el añadido hispano "de Cañas", derivado de la intensa explotación de caña de azúcar mediante trapiches y haciendas durante la época colonial.
+                    </p>
+                    <p class="mb-4">
+                        Aislado por la serranía durante muchos años, el municipio conservó un fuerte carácter tradicional, sostenido por la fertilidad de sus valles y la abundancia de sus cuerpos de agua (yacimientos termales y cascadas). Esta riqueza natural sentó las bases para una intensa vocación agrícola que, hoy en día, destaca notablemente en la producción de cacahuate.
+                    </p>
+                </div>
+
+                <!-- 4.2 La Festividad -->
+                <div>
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="church" class="mr-2"></i> 4.2 La Devoción: Jesús Nazareno y la Basílica Lateranense
+                    </h4>
+                    <p class="mb-4">
+                        El turismo religioso en Amatlán de Cañas se encuentra profundamente fundamentado en un privilegio histórico. Su iglesia principal, el <strong>Templo de Jesús Nazareno</strong> (cuya construcción en piedra volcánica inició a mediados del siglo XVIII), posee el estatus de estar <em>agregada a la Sacrosanta Basílica Lateranense de Roma</em> (San Juan de Letrán). Este título no es un dato menor para el turismo: históricamente, concedía a los peregrinos locales las mismas indulgencias (perdón de los pecados) que si viajaran a Roma.
+                    </p>
+                    <p class="mb-4">
+                        El fervor alcanza su punto máximo durante el mes de enero, culminando el <strong>15 de enero</strong> con la gran festividad al Cristo de Jesús Nazareno. Durante estos días, el pueblo recibe a miles de visitantes y grupos de danzantes. La peregrinación exige a los fieles caminatas largas y jornadas extenuantes, generando una necesidad alimentaria que el territorio resuelve brillantemente a través de sus cultivos locales.
+                    </p>
+                </div>
+
+                <!-- 4.3 Las Palanquetas -->
+                <div class="bg-crema p-8 rounded-2xl shadow-sm border border-arena my-8">
+                    <h4 class="text-2xl font-bold text-terracota mb-4 flex items-center">
+                        <i data-lucide="cookie" class="mr-2"></i> 4.3 El Sustento del Peregrino: Las Palanquetas de Cacahuate
+                    </h4>
+                    <p class="mb-4">
+                        La gastronomía se adapta a la devoción. En el contexto de las fiestas de enero y las peregrinaciones al Templo Lateranense, la <strong>palanqueta de cacahuate</strong> deja de ser una simple golosina para convertirse en un elemento funcional de la festividad: es una barra energética ancestral.
+                    </p>
+                    <p class="mb-4">
+                        Amatlán de Cañas es uno de los líderes agrícolas en la producción de cacahuate en la región. Las familias locales aprovechan las cosechas recientes de otoño-invierno para tostar el grano y mezclarlo con miel de piloncillo (o panela) hirviendo, herencia viva de su pasado cañero. La mezcla se vierte sobre superficies planas, se compacta y se corta en los tradicionales rectángulos antes de que el azúcar cristalice por completo.
+                    </p>
+                    <p>
+                        Este dulce tradicional condensa literalmente la identidad territorial de Amatlán de Cañas: el fruto de su tierra (el cacahuate), la herencia de sus haciendas (el piloncillo de la caña) y su comercialización activa como ofrenda y alimento durante las fiestas religiosas de enero, convirtiéndolo en un patrimonio gastronómico de innegable valor turístico.
+                    </p>
+                </div>
+
+                <!-- PLACEHOLDERS PARA TRABAJO DE CAMPO -->
+                <div class="mt-12 space-y-6">
+                    <h4 class="text-xl font-serif font-bold text-tierra border-b-2 border-terracota pb-2">
+                        Evidencia y Levantamiento de Campo
+                    </h4>
+                    
+                    <!-- Caja de Entrevistas -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="mic" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA ENTREVISTAS]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Aquí se documentarán los testimonios de los productores de cacahuate y fabricantes de dulces de Amatlán. Preguntas clave: ¿Cómo se selecciona el mejor cacahuate para el dulce? ¿Qué tanta es la demanda de la palanqueta durante las fiestas del 15 de enero? 
+                        </p>
+                    </div>
+
+                    <!-- Caja de Fotografías -->
+                    <div class="placeholder-box border-2 border-dashed border-terracota/40 rounded-xl p-8 text-center">
+                        <i data-lucide="camera" class="mx-auto h-10 w-10 text-terracota/50 mb-3"></i>
+                        <h5 class="font-bold text-tierra text-lg mb-2">[ESPACIO PARA GALERÍA FOTOGRÁFICA]</h5>
+                        <p class="text-sm text-tierra/70">
+                            Registro visual a recabar: La fachada de cantera del Templo de Jesús Nazareno, detalle de la placa de agregación Lateranense (si sigue visible), cultivos de cacahuate locales, y el proceso de extendido y corte de las palanquetas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Referencias APA (Capítulo 4) -->
+                <div class="mt-12 pt-8 border-t border-arena text-sm text-tierra/90">
+                    <h5 class="font-bold mb-4 uppercase tracking-wider text-xs text-terracota flex items-center">
+                        <i data-lucide="book-marked" class="w-4 h-4 mr-2"></i> Referencias Bibliográficas (Capítulo IV)
+                    </h5>
+                    <div class="space-y-3" style="text-indent: -1.5em; padding-left: 1.5em;">
+                        <p>Diócesis de Tepic. (s.f.). <em>Templo de Jesús Nazareno, agregación a la Basílica de San Juan de Letrán y Festividades de enero</em>. Archivo Histórico.</p>
+                        <p>Instituto Nacional para el Federalismo y el Desarrollo Municipal [INAFED]. (s.f.). <em>Enciclopedia de los Municipios y Delegaciones de México: Amatlán de Cañas</em>. Secretaría de Gobernación.</p>
+                        <p>Secretaría de Agricultura y Desarrollo Rural [SADER Nayarit]. (2025). <em>Producción estatal de cacahuate y ciclo agrícola</em>. Gobierno de México.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusiones Generales -->
+    <section id="conclusiones" class="py-24 px-4 bg-terracota text-white border-t border-arena relative overflow-hidden">
+        <!-- Textura de fondo suave -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <i data-lucide="lightbulb" class="mx-auto h-12 w-12 text-arena mb-4"></i>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-white mt-2 mb-4">Conclusiones Generales</h2>
+                <div class="w-24 h-1 bg-arena mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="space-y-6 text-lg md:text-xl leading-relaxed text-white/90 text-justify">
+                <p>
+                    A lo largo de esta investigación, ha quedado evidenciado que la relación entre la gastronomía y el territorio en la Zona Sur de Nayarit trasciende la simple satisfacción de una necesidad biológica. Los municipios de Jala, Ahuacatlán, Ixtlán del Río y Amatlán de Cañas demuestran que <strong>la fe y la religión actúan como catalizadores</strong> para la preservación de técnicas culinarias ancestrales, específicamente en el ámbito de la repostería y dulcería tradicional.
+                </p>
+                <p>
+                    Se ha comprobado que postres como los rosquetes, la cajeta de mango, las nieves de garrafa y las palanquetas de cacahuate no son elementos aislados; son <strong>indicadores geográficos y temporales</strong>. Su existencia está íntimamente ligada a los ciclos agrícolas (la cosecha del mango o el cacahuate) y a los calendarios litúrgicos (La Judea, San Francisco de Asís o el Cristo Nazareno). Esto les otorga una "denominación de origen cultural" que el turista moderno, en busca de experiencias auténticas, valora profundamente.
+                </p>
+                <p>
+                    Desde la perspectiva turística, se concluye que la <strong>gastronomía religiosa funciona como un imán económico y un ancla de retención</strong>. El visitante que acude motivado por la devoción o el patrimonio arquitectónico, encuentra en la compra y consumo de estos dulces un medio tangible para llevarse consigo un "pedazo del territorio". Al estructurar estos elementos en una ruta o producto turístico formal, no solo se incrementa la derrama económica local, sino que se dignifica el trabajo de las familias productoras, garantizando que el patrimonio inmaterial nayarita sobreviva al paso de las generaciones.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Anexo Técnico: Recetas -->
+    <section id="recetas" class="py-24 px-4 bg-white border-t border-arena">
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="text-center mb-12">
+                <span class="text-terracota font-bold tracking-widest uppercase text-sm">Anexo Técnico Práctico</span>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-tierra mt-2 mb-4">Recetario Tradicional</h2>
+                <div class="w-24 h-1 bg-terracota mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <!-- Aviso de Estado Temporal -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 mb-12 rounded-r-2xl shadow-sm flex items-start">
+                <i data-lucide="clock" class="text-yellow-600 mt-1 mr-4 h-6 w-6 flex-shrink-0"></i>
+                <div>
+                    <h3 class="text-lg font-bold text-yellow-800">Aviso: Sección en fase de levantamiento (Temporal)</h3>
+                    <p class="text-yellow-700 mt-2">
+                        Este apartado de la monografía digital se encuentra estructurado y a la espera de la ejecución práctica del proyecto. Aquí se integrarán las <strong>recetas originales estandarizadas</strong> obtenidas en campo, así como la <strong>evidencia fotográfica</strong> de los postres elaborados físicamente por este equipo de investigación.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid de Recetas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Receta 1: Jala -->
+                <div class="border border-arena rounded-2xl p-8 bg-crema shadow-sm transition hover:shadow-md">
+                    <h3 class="text-2xl font-serif font-bold text-terracota mb-4">1. Rosquetes de Jala</h3>
+                    <div class="placeholder-box border-2 border-dashed border-terracota/30 rounded-xl h-56 flex flex-col items-center justify-center mb-6 text-center p-4">
+                        <i data-lucide="image-plus" class="h-10 w-10 text-terracota/40 mb-3"></i>
+                        <span class="text-sm text-tierra/70 font-bold uppercase tracking-wider">[Espacio para fotografía del postre final]</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Ingredientes Requeridos:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro de gramajes (Harina, azúcar, tequesquite, vino blanco, etc.).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Procedimiento Técnico:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro paso a paso y temperaturas de horneado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Receta 2: Ahuacatlán -->
+                <div class="border border-arena rounded-2xl p-8 bg-crema shadow-sm transition hover:shadow-md">
+                    <h3 class="text-2xl font-serif font-bold text-terracota mb-4">2. Cajeta de Mango (Ahuacatlán)</h3>
+                    <div class="placeholder-box border-2 border-dashed border-terracota/30 rounded-xl h-56 flex flex-col items-center justify-center mb-6 text-center p-4">
+                        <i data-lucide="image-plus" class="h-10 w-10 text-terracota/40 mb-3"></i>
+                        <span class="text-sm text-tierra/70 font-bold uppercase tracking-wider">[Espacio para fotografía del postre final]</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Ingredientes Requeridos:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro de gramajes (Variedad de mango, azúcar, agua).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Procedimiento Técnico:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro de cocción en cazo y tiempos de reducción.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Receta 3: Ixtlán -->
+                <div class="border border-arena rounded-2xl p-8 bg-crema shadow-sm transition hover:shadow-md">
+                    <h3 class="text-2xl font-serif font-bold text-terracota mb-4">3. Nieve de Garrafa (Ixtlán)</h3>
+                    <div class="placeholder-box border-2 border-dashed border-terracota/30 rounded-xl h-56 flex flex-col items-center justify-center mb-6 text-center p-4">
+                        <i data-lucide="image-plus" class="h-10 w-10 text-terracota/40 mb-3"></i>
+                        <span class="text-sm text-tierra/70 font-bold uppercase tracking-wider">[Espacio para fotografía del postre final]</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Ingredientes Requeridos:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro (Hielo, sal de grano, fruta, base de agua/leche).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Procedimiento Técnico:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de técnica de batido manual y tiempo de congelación.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Receta 4: Amatlán -->
+                <div class="border border-arena rounded-2xl p-8 bg-crema shadow-sm transition hover:shadow-md">
+                    <h3 class="text-2xl font-serif font-bold text-terracota mb-4">4. Palanqueta (Amatlán)</h3>
+                    <div class="placeholder-box border-2 border-dashed border-terracota/30 rounded-xl h-56 flex flex-col items-center justify-center mb-6 text-center p-4">
+                        <i data-lucide="image-plus" class="h-10 w-10 text-terracota/40 mb-3"></i>
+                        <span class="text-sm text-tierra/70 font-bold uppercase tracking-wider">[Espacio para fotografía del postre final]</span>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Ingredientes Requeridos:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro (Cacahuate tostado, piloncillo/panela, agua).</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-tierra border-b border-terracota/20 pb-1 mb-2">Procedimiento Técnico:</h4>
+                            <p class="text-sm text-tierra/60 italic px-2">Pendiente de registro de punto de caramelo y técnica de corte.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white/50 py-8 text-center text-sm">
+        <p>Monografía de Gastronomía y Territorio &copy; 2026 UAN</p>
+    </footer>
+
+    <!-- Inicializar iconos -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
